@@ -1,0 +1,2 @@
+ rostopic echo -b 2019-03-24-22-32-23.bag -p /cmd_gimbal_angle > gimbal_yaw.txt
+

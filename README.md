@@ -9,4 +9,5 @@ some ros package for robot
 - realtime-detection-cpu : 2D detection in simple background which can run on CPU realtime. 60FPS on 700\*1000 image, 150FPS on  480\*640
 - bag2txt : convert rosbag to txt
 - pcl_show : not ROS package, PCL visualization cpp(cmake)
+- lidar2cam: lidar point cloud project to image
 

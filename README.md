@@ -12,4 +12,4 @@ some ros package for robot
 - pcl_show : not ROS package, PCL visualization cpp(cmake)
 - lidar2cam: lidar point cloud project to image
 
-- depth_cluster : visualization for \<Fast Range Image-Based Segmentation of Sparse 3D Laser Scans for Online Operation\> [Github](https://github.com/PRBonn/depth_clustering)
+- depth_cluster_vis : visualization for \<Fast Range Image-Based Segmentation of Sparse 3D Laser Scans for Online Operation\> [Github](https://github.com/PRBonn/depth_clustering)

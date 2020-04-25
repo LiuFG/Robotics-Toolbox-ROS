@@ -16,7 +16,7 @@ int main(int argc, char** argv)
   sensor_msgs::CameraInfo cam_info;
   ros::init(argc, argv, "image_publisher");
   ros::NodeHandle nh;
-  string path = "/home/lfg/my_work/robot/video/";
+  string path = "./src/data/";
   path = path + "blue.mp4";//用户自己添加视频文件名字
  
   VideoCapture cap(path);//open video from the path
@@ -25,8 +25,8 @@ int main(int argc, char** argv)
 //  cap.set(CV_CAP_PROP_FRAME_HEIGHT,480); 
 
   image_transport::ImageTransport it(nh);
-  image_transport::Publisher pub = it.advertise("/back_camera/image_raw", 100);
-  ros::Publisher pub2 = nh.advertise<sensor_msgs::CameraInfo>("/back_camera/camera_info",100);
+  image_transport::Publisher pub = it.advertise("camera/image_raw", 100);
+  ros::Publisher pub2 = nh.advertise<sensor_msgs::CameraInfo>("camera/camera_info",100);
   
   // Check if video device can be opened with the given index
   if(!cap.isOpened()) 
@@ -36,9 +36,12 @@ int main(int argc, char** argv)
   }
    
   bool isSuccess = true;
-  ros::Rate loop_rate(30);
+  ros::Rate loop_rate(10);
   while (nh.ok()) {
     cap >> frame;
+    //===========编写自己的代码
+
+    //========================
     isSuccess = cap.read(frame);
     if(!isSuccess)//if the video ends, then break
     {

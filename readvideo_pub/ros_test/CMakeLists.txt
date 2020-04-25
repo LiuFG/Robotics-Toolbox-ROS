@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(video_transport_tutorial)
+project(ros_test)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -201,17 +201,8 @@ include_directories(
 # catkin_add_nosetests(test)
 
 
-add_executable(serial_video_publisher
-  src/serial_video_publisher.cpp
-)
-
-#add_dependencies(video_publisher ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(serial_video_publisher
-  ${catkin_LIBRARIES}
-  ${OpenCV_LIBRARIES}
-)
 add_executable(readvideo_publisher
-  src/readvideo_publisher.cpp
+  readvideo_publisher.cpp
 )
 
 target_link_libraries(readvideo_publisher
@@ -219,7 +210,7 @@ target_link_libraries(readvideo_publisher
   ${OpenCV_LIBRARIES}
 )
 add_executable(video_subscriber
-  src/video_subscriber.cpp
+  video_subscriber.cpp
 )
 #add_dependencies(video_subscriber ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(video_subscriber

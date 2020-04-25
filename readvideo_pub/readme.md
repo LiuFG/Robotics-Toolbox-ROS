@@ -1,6 +1,6 @@
 # how to run
 
-copy the two folders into your ros_workspace/src, then catkin_make
+copy the ros_test package into your ros_workspace/src, then catkin_make
 
 finally, run:
 
